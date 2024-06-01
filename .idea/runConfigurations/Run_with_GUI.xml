@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run with GUI" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="org.studdybuddy.App" />
+    <module name="StuddyBuddy" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
