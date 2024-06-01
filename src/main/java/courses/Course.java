@@ -7,6 +7,7 @@ public class Course {
     private double credit;
     private String require;
     private String decription;
+    private double grade;
 
     public Course(String initial, String title, double credit, String require, String decription) {
 
@@ -24,6 +25,16 @@ public class Course {
         this.credit = credit;
         this.require = require;
         this.decription = decription;
+    }
+
+    public Course(String type, String initial, String title, double credit, String require, String decription, double grade) {
+        this.type = type;
+        this.initial = initial;
+        this.title = title;
+        this.credit = credit;
+        this.require = require;
+        this.decription = decription;
+        this.grade = grade;
     }
 
     public String getType() {return type;}
@@ -47,6 +58,8 @@ public class Course {
     public String getDecription() {
         return decription;
     }
+
+    public double getGrade() { return grade; }
 
     @Override
     public String toString() {

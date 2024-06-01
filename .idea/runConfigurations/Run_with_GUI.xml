@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run with GUI" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="22 (2)" />
     <option name="MAIN_CLASS_NAME" value="org.studdybuddy.App" />
     <module name="StuddyBuddy" />
     <method v="2">
