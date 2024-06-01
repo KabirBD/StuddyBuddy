@@ -30,6 +30,11 @@ public class Home {
         App.loadPage("cgpaCalculator", "CGPA Calculator", true);
     }
 
+    @FXML
+    void goToSearchPage() throws IOException {
+        App.loadPage("courseQuery", "CGPA Calculator", true);
+    }
+
 
 
 

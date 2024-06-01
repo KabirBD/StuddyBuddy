@@ -313,7 +313,7 @@ public class Courses {
 
         public static Course getCourse(String initial) {
                 for (Course course : allCourses)
-                    if (course.getInitial().equals(initial)) {
+                    if (course.getInitial().equals(initial.toUpperCase())) {
 //                       System.out.println(course.toString());
                        return course;
                     }

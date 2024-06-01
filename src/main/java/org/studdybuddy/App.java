@@ -52,7 +52,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         currentStage = stage;
-        loadPage("cgpaCalculator", "Studdy Buddy");
+        loadPage("home", "Studdy Buddy");
     }
 
     public static void main(String[] args) {
