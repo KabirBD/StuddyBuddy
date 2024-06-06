@@ -10,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CourseQuery">
-   <VBox prefHeight="400.0" prefWidth="676.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-      <Text fill="#000000bb" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Course Searcher" textAlignment="CENTER" wrappingWidth="675.24267578125">
+<AnchorPane prefHeight="545.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CourseQuery">
+   <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="676.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Text fill="#a91212ba" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Course Information Query" textAlignment="CENTER" wrappingWidth="675.24267578125">
          <font>
             <Font size="25.0" />
          </font>
       </Text>
-      <HBox alignment="CENTER" prefHeight="78.0" prefWidth="676.0">
+      <HBox alignment="CENTER" prefHeight="78.0" prefWidth="676.0" spacing="10.0">
          <TextField fx:id="queryInputField" prefHeight="26.0" prefWidth="494.0" promptText="Type a course title or initial">
             <opaqueInsets>
                <Insets />
@@ -26,16 +26,17 @@
                <Font size="15.0" />
             </font>
          </TextField>
-         <Button mnemonicParsing="false" onAction="#search" text="Search">
+         <Button accessibleHelp="Click to search" mnemonicParsing="false" onAction="#search" text="Search">
             <font>
                <Font size="15.0" />
             </font>
          </Button>
       </HBox>
-      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="346.0" prefWidth="676.0">
-         <VBox fx:id="searchResultContainer" prefHeight="334.0" prefWidth="674.0">
-            <!--          Search results will be added here       -->
-         </VBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+         <VBox fx:id="searchResultContainer" spacing="10.0">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding></VBox>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>

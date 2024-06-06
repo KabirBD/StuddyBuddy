@@ -6,15 +6,40 @@ public class Course {
     private String title;
     private double credit;
     private String require;
-    private String decription;
+    private String description;
+    private String grade;
+
+    public Course(String initial, double credit, String grade) {
+        this.initial = initial;
+        this.credit = credit;
+        this.grade = grade;
+    }
+
+    public Course(String initial, String title, double credit) {
+        this.initial = initial;
+        this.title = title;
+        this.credit = credit;
+    }
+
+    public Course(String initial, String title, double credit, String grade) {
+        this.initial = initial;
+        this.title = title;
+        this.credit = credit;
+        this.grade = grade;
+    }
+
+    public Course(String initial, String title, String grade) {
+        this.initial = initial;
+        this.title = title;
+        this.grade = grade;
+    }
 
     public Course(String initial, String title, double credit, String require, String decription) {
-
         this.initial = initial;
         this.title = title;
         this.credit = credit;
         this.require = require;
-        this.decription = decription;
+        this.description = decription;
     }
 
     public Course(String type, String initial, String title, double credit, String require, String decription) {
@@ -23,10 +48,22 @@ public class Course {
         this.title = title;
         this.credit = credit;
         this.require = require;
-        this.decription = decription;
+        this.description = decription;
     }
 
-    public String getType() {return type;}
+    public Course(String type, String initial, String title, double credit, String grade, String require, String decription) {
+        this.type = type;
+        this.initial = initial;
+        this.title = title;
+        this.credit = credit;
+        this.require = require;
+        this.description = decription;
+        this.grade = grade;
+    }
+
+    public String getType() {
+        return type;
+    }
 
     public String getInitial() {
         return initial;
@@ -44,14 +81,19 @@ public class Course {
         return require;
     }
 
-    public String getDecription() {
-        return decription;
+    public String getDescription() {
+        return description;
     }
 
-    @Override
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
     public String toString() {
-        return ("Course Name: "+getTitle()+"\nInitial: "+getInitial()+"\nCourse Type: "+getType()+"\nCredit: "+getCredit()+"\nPre-requisites: "+getRequire()+"\n\nDescription:\n"+getDecription());
+        return ("Course Name: " + getTitle() + "\nInitial: " + getInitial() + "\nCourse Type: " + getType() + "\nCredit: " + getCredit() + "\nGrade: " + getGrade() + "\nPre-requisites: " + getRequire() + "\n\nDescription:\n" + getDescription());
     }
-
-// other methods might me added later
 }

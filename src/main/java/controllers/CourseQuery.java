@@ -1,12 +1,12 @@
 package controllers;
 
 
-import components.CourseInfoComponent;
+import components.CourseInfo;
+import courses.Course;
 import courses.Courses;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 import java.util.Objects;
 
@@ -22,8 +22,14 @@ public class CourseQuery {
     @FXML
     void search() {
         searchResultContainer.getChildren().clear();
-        searchResultContainer.getChildren().add( new CourseInfoComponent(Objects.requireNonNull(Courses.getCourse(queryInputField.getText()))));
-        System.out.println(Courses.getCourse(queryInputField.getText()));
+        Course[] matchedCourses = Courses.getMatchedCourses(queryInputField.getText());
+        if (matchedCourses != null)
+            for (Course course : matchedCourses) {
+                if (course != null) {
+                    searchResultContainer.getChildren().add(new CourseInfo(course));
+                }
+            }
     }
+
 
 }

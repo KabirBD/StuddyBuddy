@@ -1,63 +1,79 @@
 package org.studdybuddy;
 
-
-import courses.Courses;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.SnapshotResult;
 import javafx.stage.Stage;
-import tools.Date;
+import tools.DateCustomizer;
 
 import java.io.IOException;
 
 public class App extends Application {
 
-    public static Stage currentStage;
-
-
-    public  static void loadPage( String fxml) throws IOException {
-        loadPage(fxml, "Studdy Buddy");
-    }
-    public  static void loadPage( String fxml, boolean newStage) throws IOException {
-        loadPage(fxml, "Studdy Buddy", newStage);
-    }
-    public  static void loadPage( String fxml, String title) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml +".fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = currentStage;
-//        stage.setHeight(stage.getHeight());
-//        stage.setWidth(stage.getWidth());
-        stage.setResizable(false);
-        stage.setTitle(title);
-        stage.setScene(scene);
-        stage.show();
-        currentStage = stage;
-    }
-
-    public  static void loadPage( String fxml, String title, boolean newStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml +".fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage;
-        if (newStage){
-            stage = new Stage();
-        }else{
-         stage = currentStage;
-        }
-        stage.setTitle(title);
-        stage.setScene(scene);
-        stage.show();
-        currentStage = stage;
-    }
+    public static Stage homeStage;
+    public static Stage userInfoFormStage;
+    public static Stage cgpaCalculatorStage;
+    public static Stage courseQueryStage;
 
     @Override
     public void start(Stage stage) throws IOException {
-        currentStage = stage;
-        loadPage("home", "Studdy Buddy");
+        homeStage = stage;
+        cgpaCalculatorStage = new Stage();
+        courseQueryStage = new Stage();
+        userInfoFormStage = new Stage();
+        loadHomePage();
     }
 
     public static void main(String[] args) {
-        launch();
-        System.out.println(Date.getTime());
-//        System.exit(0);
+        launch(args);
+        System.out.println(DateCustomizer.getTime());
+        System.exit(0);
     }
+
+    public static void loadHomePage() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("homePage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        homeStage.setTitle("Studdy Buddy");
+        homeStage.setScene(scene);
+        homeStage.setMinWidth(500);
+        homeStage.setMinHeight(400);
+        homeStage.show();
+    }
+
+    public static void loadCgpaCalculatorPage() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("cgpaCalculator.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        cgpaCalculatorStage.setTitle("CGPA Calculator");
+        cgpaCalculatorStage.setScene(scene);
+        courseQueryStage.setMinWidth(500);
+        cgpaCalculatorStage.setMinHeight(400);
+        cgpaCalculatorStage.show();
+    }
+
+    public static void loadCourseQueryPage() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("courseQuery.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        courseQueryStage.setTitle("Course Query");
+        courseQueryStage.setScene(scene);
+        courseQueryStage.setMinWidth(500);
+        courseQueryStage.setMinHeight(400);
+        courseQueryStage.show();
+    }
+
+    public static void loadUserInfoPage() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("studentInfoForm.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        userInfoFormStage.setTitle("User Information");
+        userInfoFormStage.setScene(scene);
+        userInfoFormStage.setMinWidth(500);
+        userInfoFormStage.setMinHeight(400);
+        userInfoFormStage.show();
+    }
+
+    public static void closeUserInfoPage() {
+        userInfoFormStage.close();
+    }
+
+
 }
